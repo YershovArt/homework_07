@@ -21,10 +21,151 @@ a {
     text-decoration: none;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
 /* MAIN STYLES */
+
+body {
+    background-color: #fceea7;
+}
+
+.header {
+    border-bottom: 2px solid wheat;
+}
+
+.logo,
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FF7518;
+}
+
+[class$="link"]:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logo__picture-wrap {
+    width: 40%;
+}
+
+.logo__picture {
+    min-width: 50%;
+    width: 100%;
+}
+
+.menu-wrap {
+    min-width: 60%;
+    width: 60%;
+}
+
+.menu {
+    font-size: 0;
+    text-align: center;
+}
+
+.menu__item {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0% 3% 0% 3%;
+    position: relative;
+}
+
+.menu__item:hover {
+    background-color: #aed580;
+}
+
+[class*="menu__link"] {
+    display: block;
+    width: 100%; 
+    color: black;
+    font-size: 1rem;
+}
+
+.sub-menu,
+.sub-sub-menu {
+    display: none;
+    background-color: #aed580;
+    z-index: 10; 
+}
+
+.sub-menu__item,
+.sub-sub-menu__item{
+    position: relative;    
+    outline: 1px solid white;
+}
+
+[class*="sub-menu__link"] {
+    white-space: nowrap;      
+    padding: 20px;
+    width: 100%;   
+    z-index: 10;  
+}
+
+[class*="sub-menu__link"]:hover {    
+    color: white;  
+}
+
+.menu__item:hover .sub-menu {
+    display: block;
+    position: absolute;   
+}
+
+.sub-menu__item:hover .sub-sub-menu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0%;   
+}
+
+
+.menu__item:hover:nth-child(2) .menu__link::after {
+    content: '+';
+    color: white;
+    position: absolute;
+    display:inline;  
+}
+
+.sub-menu__item .sub-menu__link::after {
+    content: '+';
+    color: white;
+    position: absolute;
+    display:inline;  
+}
+
+.section__title,
+.article__title {
+    text-align: center;
+    margin-top:5% ;
+    margin-bottom:3% ;
+}
+
+.article {
+    width: 67%;
+    outline: 2px solid black;
+    margin: 0 auto;
+}
+
+.article__item {
+    text-indent: 5%;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #FF7518;
+    padding: 3% 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+}
 
 
