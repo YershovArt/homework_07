@@ -30,142 +30,185 @@ ul {
 
 body {
     background-color: #fceea7;
+    /* Цвет фона для body */
 }
 
 .header {
     border-bottom: 2px solid wheat;
+    /* Цвет для header границы */
 }
 
 .logo,
 .header {
     display: flex;
+    /* Делаю флекс чтобы расставить обертки в заголовке и лого*/
     justify-content: space-around;
+    /* Расставил элементы вдоль главной оси */
     align-items: center;
+    /* Сместил элементы по центру поперечной оси */
     background-color: #FF7518;
+    /* Добавил цвет фона */
 }
 
 [class$="link"]:hover {
     text-decoration: underline;
+    /* Дал ссылкам подчеркивание при наведении */
 }
 
 .logo {
+    min-width: 20%;
+    /* Минимальная ширина для блока с логотипом и название */
     width: 20%;
+    /* Ширина для блока с логотипом и название */
 }
 
 .logo__picture-wrap {
     width: 40%;
+    /* Ширина для обертки к картинки, чтобы все поместилось*/
 }
 
 .logo__picture {
     min-width: 50%;
+    /* Минимальная ширина для картинки при сужении родительского контейнера */
     width: 100%;
+    /* Ширина для картинки в родительском контейнере */
 }
 
 .menu-wrap {
     min-width: 60%;
+    /* Минимальная ширина обертки меню */
     width: 60%;
+    /* Минимальная обертки меню */
 }
 
 .menu {
     font-size: 0;
+    /* Перый шаг по убиранию пробелов между li */
     text-align: center;
+    /* Выравниваем элементы по центру */
 }
 
 .menu__item {
     display: inline-block;
+    /* Выравниваем элементы в линию */
     font-size: 1rem;
+    /* Второй шаг по убиранию пробелов между li*/
     margin: 0% 3% 0% 3%;
+    /* Добавляю отступы между элементами меню */
     position: relative;
+    /* Так как позиционируем относительно одного из пунктов меню подменю, делаю position relative */
 }
 
 .menu__item:hover {
     background-color: #aed580;
+    /* Подсвечиваем при наведении пункты меню изменением заднего фона */
 }
 
 [class*="menu__link"] {
     display: block;
-    width: 100%; 
+    /* Добавляем ссылкам свойство для регулирования высоты и ширины */
     color: black;
-    font-size: 1rem;
+    /* Цвет шрифта всем ссылкам меню */
+    width: 100%;
 }
 
 .sub-menu,
 .sub-sub-menu {
     display: none;
+    /* Не отображаем без наведения */
     background-color: #aed580;
-    z-index: 10; 
+    /* Добавляем пункты для подменю */
+    z-index: 10;
+    /* Чтобы понкты подменю покрывали при выпадании контент */
 }
 
 .sub-menu__item,
-.sub-sub-menu__item{
-    position: relative;    
+.sub-sub-menu__item {
+    position: relative;
+    /* Добавляем для пункта подменю позиционирование, чтобы позиционировать относительно него подменю подменю */
     outline: 1px solid white;
 }
 
 [class*="sub-menu__link"] {
-    white-space: nowrap;      
+    white-space: nowrap;
+    /* Чтобы текст в подменю не переносился */
     padding: 20px;
-    width: 100%;   
-    z-index: 10;  
+    /* Внутренний отступ для расоты */
+    z-index: 10;
+    /* Чтобы контент выпадающего меню покрывалповерх */
 }
 
-[class*="sub-menu__link"]:hover {    
-    color: white;  
+[class*="sub-menu__link"]:hover {
+    color: white;
+    /* Цвет шрифта при наведении для ссылок подменю */
 }
 
 .menu__item:hover .sub-menu {
     display: block;
-    position: absolute;   
+    /* Цвет шрифта при наведении для ссылок подменю */
+    position: absolute;
+    /* Абсолютно позиционируем относительно item с позицией относительной */
 }
 
 .sub-menu__item:hover .sub-sub-menu {
     display: block;
+    /* Чтобы появилось подменю при наведении */
     position: absolute;
+    /* Абсолютно позиционируем относительно item с позицией относительной */
     left: 100%;
-    top: 0%;   
+    /* Сдвигаем подменю подменю в левую сторону  */
+    top: 0%;
+    /* Ставим рядом с подменю */
 }
 
-
+.sub-menu__item .sub-menu__link::after,
 .menu__item:hover:nth-child(2) .menu__link::after {
     content: '+';
+    /* Добавляю плюсик, чтобы было похоже на макет */
+    display: inline;
+    /* Чтобы шло сразу после ссылки в одной строке  */
     color: white;
-    position: absolute;
-    display:inline;  
-}
-
-.sub-menu__item .sub-menu__link::after {
-    content: '+';
-    color: white;
-    position: absolute;
-    display:inline;  
+    /* Цвет плюсика */
 }
 
 .section__title,
 .article__title {
     text-align: center;
-    margin-top:5% ;
-    margin-bottom:3% ;
+    /* Ставлю заголовки по центру */
+    margin: 5% 0% 3%;
+    /* Верхние отступ, нижний отступ */
+
 }
 
-.article {
+.section {
     width: 67%;
-    outline: 2px solid black;
+    /* Ширина */
     margin: 0 auto;
+    /* Позиционируем по центру */
+    outline: 2px solid black;
+    /* Обводка */
 }
 
 .article__item {
     text-indent: 5%;
+    /* Абзац */
     line-height: 1.5;
+    /* Межстрочный интервал */
 }
 
 .footer {
     text-align: center;
+    /* Текст по центру */
     text-transform: capitalize;
+    /* Первые буквы большие */
     background-color: #FF7518;
+    /* Цвет фона для футера */
     padding: 3% 0;
+    /* Верхний внутренний отступ */
     width: 100%;
+    /* Ширина */
     position: fixed;
+    /* Леплю к низу футер, шаг 1 */
     bottom: 0%;
+    /* Леплю к низу футер шаг 2 */
 }
-
-
